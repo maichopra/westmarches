@@ -3,6 +3,8 @@ interface Props {
 	title: string;
 }
 
+import { NavBar } from '@/components/NavBar'
+
 const { title } = Astro.props;
 ---
 
@@ -16,10 +18,14 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+	<NavBar client:load />
 	<body>
+		
 		<slot />
 	</body>
 </html>
+
+
 <style is:global>
 	:root {
 		--accent: 136, 58, 234;
@@ -48,3 +54,33 @@ const { title } = Astro.props;
 			monospace;
 	}
 </style>
+
+<style>
+	html {
+    	height: 100%;
+	}
+
+	body {
+		min-height: 100%;
+	}
+</style>
+
+
+<script is:inline>
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+ 
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script>

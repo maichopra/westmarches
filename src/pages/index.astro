@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { RandomTable } from '@/components/RandomTable';
+
 import '@/styles/global.css'
 
 import weatherTableData from "@/content/table/weather.json";
@@ -15,7 +16,7 @@ interface ITableEntry {
  
   interface ITableData {
     name: string;
-    type: string;
+    type: number;
     tag: string;
     entries: ITableEntry[];
   }
@@ -23,9 +24,9 @@ interface ITableEntry {
 const weatherData : ITableData = weatherTableData;
 ---
 
-<Layout title="Westmarches">
+<Layout title="Rangers Records">
 	<main class="flex flex-col items-center gap-5 p-5">
-		<h1 class="text-5xl">The Westmarches</h1>
-		<RandomTable name={weatherData.name} type={weatherData.type} tag={weatherData.tag} entries={weatherData.entries} client:load></RandomTable>
+		<h1 class="text-5xl">The Rangers Records</h1>
+    <RandomTable tableData = {weatherData} client:load></RandomTable>
 	</main>
 </Layout>

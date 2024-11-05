@@ -1,0 +1,63 @@
+{
+    "name": "direction",
+    "type": 8,
+    "tag": "Misc",
+    "entries": [
+        {
+            "index" : 0,
+            "roll-min": 1,
+            "roll-max": 1,
+            "label": "North",
+            "description": "North or Up"
+        },
+        {
+            "index" : 1,
+            "roll-min": 2,
+            "roll-max": 2,
+            "label": "North East",
+            "description": "North East or Diagionally to the Up and Right"
+        },
+        {
+            "index" : 2,
+            "roll-min": 3,
+            "roll-max": 3,
+            "label": "East",
+            "description": "East or Right"
+        },
+        {
+            "index" : 3,
+            "roll-min": 4,
+            "roll-max": 4,
+            "label": "South East",
+            "description": "South East or Diagonally to Down and Right"
+        },
+        {
+            "index" : 4,
+            "roll-min": 5,
+            "roll-max": 5,
+            "label": "South",
+            "description": "South or Down"
+        },
+        {
+            "index" : 5,
+            "roll-min": 6,
+            "roll-max": 6,
+            "label": "South West",
+            "description": "South West or Diagonally to the Down and Left"
+        },
+        {
+            "index" : 6,
+            "roll-min": 7,
+            "roll-max": 7,
+            "label": "West",
+            "description": "West or Left"
+        },
+        {
+            "index" : 7,
+            "roll-min": 8,
+            "roll-max": 8,
+            "label": "North West",
+            "description": "North West or Diagonally to the Up and Left"
+        }
+    ]
+}

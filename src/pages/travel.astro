@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { RandomTable } from '@/components/RandomTable';
+
+
+import '@/styles/global.css'
+
+import directionTableData from "@/content/table/direction.json"
+
+---
+<Layout title="Rangers Records">
+	<main class="flex flex-col items-center gap-5 p-5">
+		<h1 class="text-5xl">The Rangers Records</h1>
+    <RandomTable tableData = {directionTableData} client:load></RandomTable>
+	</main>
+</Layout>

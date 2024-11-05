@@ -48,11 +48,11 @@ import {
         </TableHeader>
         <TableBody>
           {tableData.entries.map((entry) => (
-            <TableRow key={entry.index} className={`transition-colors duration-700 ease-in-out ${entry.index === highlightedRow ? "bg-blue-400" : "bg-transparent"}`}>
+            <TableRow key={entry.index} className={`transition-colors duration-700 ease-in-out ${entry.index === highlightedRow ? "bg-slate-400" : "bg-transparent"}`}>
               <TableCell className="font-medium">{entry.index}</TableCell>
-              <TableCell>{entry["roll-min"]} - {entry["roll-max"]}</TableCell>
+              <TableCell>{entry["roll-min"] != entry["roll-max"] ? `${entry["roll-min"]} - ${entry["roll-max"]}` : entry["roll-min"]}</TableCell>
               <TableCell>{entry.label}</TableCell>
-              <TableCell className="text-right">{entry.description}</TableCell>
+              <TableCell className="text-right" dangerouslySetInnerHTML={{ __html: entry.description }}></TableCell>
             </TableRow>
           ))}
         </TableBody>

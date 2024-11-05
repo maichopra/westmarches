@@ -6,27 +6,27 @@
         {
             "index" : 0,
             "roll-min": 1,
-            "roll-max": 3,
+            "roll-max": 4,
             "label": "Sunny",
-            "description": "With the sun in the sky you can feel and spring in your step."
+            "description": "With the sun in the sky and the shadows short, you find it easy to see into the distance. Increase the encounter start distance result by 1 result."
         },
         {
             "index" : 1,
-            "roll-min": 4,
-            "roll-max": 5,
+            "roll-min": 5,
+            "roll-max": 6,
             "label": "Raining",
-            "description": "Rain will wash away the tracks. Keep up your guard, least you get ambushed."
+            "description": "Rain will wash away the tracks. Keep up your guard, least you get ambushed. Add 1d6 to all stealth rolls."
         },
         {
             "index" : 2,
-            "roll-min": 6,
-            "roll-max": 7,
+            "roll-min": 7,
+            "roll-max": 8,
             "label": "Windy",
             "description": "The wind whips away any projectiles and magical effects. At the start of each round roll a d4 and a direction."
         },
         {
             "index" : 3,
-            "roll-min": 8,
+            "roll-min": 9,
             "roll-max": 10,
             "label": "Snowing",
             "description": "Snow makes it hard to hide. You roll twice on the travel table and take the worse option."

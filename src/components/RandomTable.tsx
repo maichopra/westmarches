@@ -15,7 +15,7 @@ interface ITableEntry {
  
   interface ITableData {
     name: string;
-    type: string;
+    type: number;
     tag: string;
     entries: ITableEntry[];
   }
@@ -24,8 +24,9 @@ export function RandomTable(tableData : ITableData) {
     const [highlightedRow, setHighlightedRow] = React.useState<number | null>(null);
     
     const handleRandomSelect = () => {
-        const randomIndex = Math.floor(Math.random() * tableData.entries.length);
-        setHighlightedRow(randomIndex);
+        const randomRoll = Math.floor(Math.random() * tableData.type) + 1;
+        const randomIndex = tableData.entries.find(entry => randomRoll >= entry["roll-min"] && randomRoll <= entry["roll-max"])?.index;
+        setHighlightedRow(randomIndex != null ? randomIndex : 0);
       };
 
       return (

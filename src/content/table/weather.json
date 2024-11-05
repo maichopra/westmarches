@@ -1,6 +1,6 @@
 {
     "name": "weather",
-    "type": "D10",
+    "type": 10,
     "tag": "Travel",
     "entries": [
         {

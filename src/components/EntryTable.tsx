@@ -22,7 +22,7 @@ import {
  
   interface ITableData {
     name: string;
-    type: string;
+    type: number;
     tag: string;
     entries: ITableEntry[];
   }
@@ -48,7 +48,7 @@ import {
         </TableHeader>
         <TableBody>
           {tableData.entries.map((entry) => (
-            <TableRow key={entry.index} className={entry.index === highlightedRow ? "bg-blue-400" : ""}>
+            <TableRow key={entry.index} className={`transition-colors duration-700 ease-in-out ${entry.index === highlightedRow ? "bg-blue-400" : "bg-transparent"}`}>
               <TableCell className="font-medium">{entry.index}</TableCell>
               <TableCell>{entry["roll-min"]} - {entry["roll-max"]}</TableCell>
               <TableCell>{entry.label}</TableCell>
@@ -59,7 +59,7 @@ import {
         <TableFooter>
           <TableRow>
             <TableCell colSpan={3}>Tags</TableCell>
-            <TableCell className="text-right"><Badge>{tableData.tag}</Badge> <Badge>{tableData.type}</Badge></TableCell>
+            <TableCell className="text-right"><Badge>{tableData.tag}</Badge> <Badge>D{tableData.type}</Badge></TableCell>
           </TableRow>
         </TableFooter>
       </Table>
